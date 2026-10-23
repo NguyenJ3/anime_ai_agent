@@ -5,11 +5,14 @@ AI anime waifu agent chat
 import 
 import json, os, datetime
 from pathlib import Path
-import discord
-from anthropic import AsyncAnthropic
+from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 
-# Set up Anthropic API key
-anthropic.api_key = os.getenv("ANTHROPIC_API_KEY")
+load_dotenv()
+gemini_api_key = os.environ["GEMINI_API_KEY"]
+discord_token = os.environ["DISCORD_TOKEN"]
+owner_id = os.environ["OWNER_ID"]
 
-# Define the model and system prompt
-model = "claude-3-5-sonnet-20260319"
+# Set up Gemini API key
+gemini.api_key = gemini_api_key
